@@ -2,7 +2,11 @@
   "name": "tonight-express-api",
   "version": "1.0.0",
   "description": "",
+  "scripts": {
+    "start": "node api.js"
+  },
   "dependencies": {
+    "axios": "^0.21.4",
     "express": "^4.17.1",
     "serverless-http": "^2.7.0"
   }

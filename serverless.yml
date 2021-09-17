@@ -8,9 +8,15 @@ provider:
   runtime: nodejs12.x
   lambdaHashingVersion: '20201221'
   region: eu-west-2
+  httpApi:
+    cors:
+      allowedMethods:
+        - GET
 
 functions:
   api:
-    handler: handler.api
+    handler: api.api
     events:
-      - httpApi: '*'
+    - httpApi:
+        method: GET
+        path: /{city}
