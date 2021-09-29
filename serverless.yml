@@ -18,5 +18,5 @@ functions:
     handler: api.api
     events:
     - httpApi:
-        method: GET
         path: /{city}
+        method: get

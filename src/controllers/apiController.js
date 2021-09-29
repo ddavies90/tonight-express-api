@@ -7,7 +7,7 @@ exports.searchByCity = async (req, res) => {
 
   if(city.match(/\W/)) {
     return res.status(400).json({
-      error: 'Bad request. Please try again.'
+      error: 'Bad request. Please try again.' 
     });
   };
 
