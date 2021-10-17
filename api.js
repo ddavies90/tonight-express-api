@@ -12,6 +12,4 @@ app.use('/user', databaseRouter);
 app.use('/', apiRouter);
 
 
-// module.exports.api = serverless(app);
-
-app.listen(3001, console.log('listening'));
+module.exports.api = serverless(app);
