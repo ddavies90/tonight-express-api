@@ -24,7 +24,7 @@ exports.searchByCity = async (req, res) => {
 
     if(!data._embedded) {
       res.status(404).json({
-        error: 'City not found. Please try again.'
+        error: 'There are either no events at this location at this time or the city is not found. Please try again.'
       });
     } else {
       res.status(200).json(data);
