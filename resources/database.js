@@ -1,4 +1,5 @@
 const AWS = require('aws-sdk');
+
 const db = new AWS.DynamoDB.DocumentClient({
     region: 'eu-west-2',
     credentials: {
@@ -6,3 +7,5 @@ const db = new AWS.DynamoDB.DocumentClient({
         secretAccessKey: process.env.SAK
     }
 });
+
+module.exports = db;

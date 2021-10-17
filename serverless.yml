@@ -12,6 +12,7 @@ provider:
     cors:
       allowedMethods:
         - GET
+        - POST
 
 functions:
   api:
@@ -20,9 +21,15 @@ functions:
     - httpApi:
         path: /{city}
         method: get
+    - httpApi:
+        path: /user
+        method: get
+    - httpApi:
+        path: /user
+        method: post
 
 custom:
-  tableName: tonight-users
+  tableName: tonight-app-users
 
 resources:
   Resources:
@@ -31,12 +38,12 @@ resources:
       Properties:
         TableName: ${self:custom.tableName}
         AttributeDefinitions:
-          - AttributeName: UID
+          - AttributeName: ID
             AttributeType: S
           - AttributeName: ActID
             AttributeType: S
         KeySchema:
-          - AttributeName: UID
+          - AttributeName: ID
             KeyType: HASH
           - AttributeName: ActID
             KeyType: RANGE
